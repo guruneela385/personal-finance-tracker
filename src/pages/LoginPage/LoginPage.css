@@ -1,0 +1,60 @@
+/* src/pages/LoginPage/LoginPage.css */
+.login-page {
+  max-width: 450px; /* Slightly wider for forms */
+  text-align: center;
+}
+
+.login-page h1 {
+  color: var(--primary-color);
+  margin-bottom: 0.5rem;
+}
+
+.login-page .subtitle {
+  color: var(--text-light);
+  font-size: 1.1em;
+  margin-bottom: 2rem;
+}
+
+.auth-form {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem; /* Increased gap for better spacing */
+  width: 100%;
+}
+
+.form-group {
+  text-align: left;
+}
+
+.auth-form label {
+  margin-bottom: 0.5rem;
+}
+
+.auth-form input {
+  width: 100%; /* Ensure inputs take full width of form */
+  box-sizing: border-box; /* Include padding/border in width */
+}
+
+.login-button {
+  width: 100%;
+  padding: 1em;
+  font-size: 1.1em;
+  border-radius: 10px;
+  background: linear-gradient(45deg, var(--primary-color), var(--primary-dark));
+  box-shadow: 0 6px 12px rgba(0, 123, 255, 0.3);
+}
+
+.login-button:hover {
+  background: linear-gradient(45deg, var(--primary-dark), var(--primary-color));
+  box-shadow: 0 8px 16px rgba(0, 123, 255, 0.4);
+}
+
+.auth-link-text {
+  margin-top: 1.5rem;
+  font-size: 0.95em;
+  color: var(--text-light);
+}
+
+.auth-link-text a {
+  font-weight: bold;
+}

@@ -1,0 +1,32 @@
+/* src/pages/SignUpPage/SignUpPage.css */
+.signup-page {
+  max-width: 450px; /* Consistent width with login page */
+  text-align: center;
+}
+
+.signup-page h1 {
+  color: var(--primary-color);
+  margin-bottom: 0.5rem;
+}
+
+.signup-page .subtitle {
+  color: var(--text-light);
+  font-size: 1.1em;
+  margin-bottom: 2rem;
+}
+
+.signup-button {
+  width: 100%;
+  padding: 1em;
+  font-size: 1.1em;
+  border-radius: 10px;
+  background: linear-gradient(45deg, var(--success-color), #218838); /* Green gradient */
+  box-shadow: 0 6px 12px rgba(40, 167, 69, 0.3);
+}
+
+.signup-button:hover {
+  background: linear-gradient(45deg, #218838, var(--success-color));
+  box-shadow: 0 8px 16px rgba(40, 167, 69, 0.4);
+}
+
+/* Reusing .auth-form and .auth-link-text from LoginPage.css */

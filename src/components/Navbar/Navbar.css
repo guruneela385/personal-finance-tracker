@@ -1,0 +1,145 @@
+/* src/components/Navbar/Navbar.css */
+.navbar {
+  background-color: var(--background-dark);
+  padding: 1rem 2rem;
+  box-shadow: 0 4px 8px var(--shadow-dark);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+  box-sizing: border-box;
+  position: sticky; /* Makes navbar stick to the top */
+  top: 0;
+  z-index: 1000; /* Ensures it stays on top of other content */
+}
+
+.navbar-brand .navbar-logo {
+  font-size: 1.8em;
+  font-weight: 700;
+  color: var(--primary-color);
+  text-decoration: none;
+  transition: color 0.3s ease, transform 0.2s ease;
+}
+
+.navbar-brand .navbar-logo:hover {
+  color: var(--primary-light);
+  transform: scale(1.02);
+}
+
+.navbar-links {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  align-items: center;
+  gap: 1.5rem;
+}
+
+.navbar-links li {
+  margin: 0;
+}
+
+.nav-link {
+  color: var(--text-light);
+  text-decoration: none;
+  font-weight: 500;
+  padding: 0.5rem 1rem;
+  border-radius: 6px;
+  transition: background-color 0.3s ease, color 0.3s ease, transform 0.2s ease;
+  position: relative; /* For underline effect */
+}
+
+.nav-link::after {
+  content: '';
+  position: absolute;
+  width: 0;
+  height: 2px;
+  bottom: -5px;
+  left: 50%;
+  transform: translateX(-50%);
+  background-color: var(--primary-color);
+  transition: width 0.3s ease;
+}
+
+.nav-link:hover::after,
+.nav-link.active::after { /* Add .active class for current page if using NavLink */
+  width: 100%;
+}
+
+.nav-link:hover {
+  background-color: rgba(255, 255, 255, 0.1);
+  color: var(--primary-color);
+  transform: translateY(-2px);
+}
+
+.nav-button {
+  padding: 0.6em 1.2em;
+  font-size: 0.9em;
+  border-radius: 6px;
+  background-color: var(--primary-color);
+  color: white;
+  border: none;
+  cursor: pointer;
+  transition: background-color 0.3s ease, transform 0.2s ease, box-shadow 0.3s ease;
+  box-shadow: 0 2px 4px var(--shadow-light);
+}
+
+.nav-button:hover {
+  background-color: var(--primary-dark);
+  transform: translateY(-2px);
+  box-shadow: 0 4px 8px var(--shadow-dark);
+}
+
+.logout-button {
+  background-color: var(--danger-color);
+}
+
+.logout-button:hover {
+  background-color: #c82333; /* Darker red */
+}
+
+.user-info {
+  color: var(--text-light);
+  font-weight: 500;
+  margin-left: 1rem;
+  padding: 0.5rem 1rem;
+  background-color: rgba(255, 255, 255, 0.05);
+  border-radius: 6px;
+}
+
+/* Responsive adjustments for Navbar */
+@media (max-width: 768px) {
+  .navbar {
+    flex-direction: column;
+    padding: 1rem;
+  }
+
+  .navbar-links {
+    margin-top: 1rem;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 0.8rem;
+  }
+
+  .nav-link, .nav-button {
+    padding: 0.4em 0.8em;
+    font-size: 0.8em;
+  }
+
+  .user-info {
+    margin-left: 0;
+    margin-top: 0.5rem;
+    font-size: 0.8em;
+    text-align: center;
+    width: 100%;
+  }
+}
+
+@media (max-width: 480px) {
+  .navbar-brand .navbar-logo {
+    font-size: 1.5em;
+  }
+  .navbar-links {
+    gap: 0.5rem;
+  }
+}

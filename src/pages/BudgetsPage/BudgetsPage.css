@@ -1,0 +1,288 @@
+/* src/pages/BudgetsPage/BudgetsPage.css */
+.budgets-page {
+  max-width: 1000px;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+}
+
+.budgets-page h1 {
+  color: var(--primary-color);
+  margin-bottom: 1rem;
+}
+
+/* Budget Form Styling */
+.budget-form {
+  width: 100%;
+  max-width: 500px; /* Slightly narrower for budget form */
+  margin: 0 auto;
+  padding: 2rem;
+  background-color: var(--background-light);
+  border-radius: 12px;
+  box-shadow: 0 6px 12px var(--shadow-dark);
+  text-align: left;
+  display: flex;
+  flex-direction: column;
+  gap: 1.2rem;
+  animation: slideInFromTop 0.5s ease-out;
+}
+
+.budget-form h3 {
+  color: var(--text-light);
+  font-size: 1.8em;
+  margin-bottom: 1rem;
+  text-align: center;
+}
+
+.budget-form .form-group {
+  margin-bottom: 0.5rem;
+}
+
+.budget-form label {
+  font-weight: 600;
+  color: var(--text-light);
+}
+
+.budget-form input,
+.budget-form select {
+  width: calc(100% - 2em);
+  padding: 0.8em;
+  border-radius: 6px;
+  border: 1px solid var(--border-color);
+  background-color: var(--background-dark);
+  color: var(--text-light);
+  font-size: 1em;
+}
+
+.budget-form input:focus,
+.budget-form select:focus {
+  border-color: var(--primary-color);
+  box-shadow: 0 0 0 3px rgba(0, 123, 255, 0.2);
+}
+
+.budget-form .form-actions {
+  display: flex;
+  gap: 1rem;
+  justify-content: center;
+  margin-top: 1rem;
+}
+
+.budget-form .primary-button {
+  background-color: var(--primary-color);
+  color: white;
+  padding: 0.8em 1.5em;
+  border-radius: 8px;
+  font-weight: 600;
+  transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+.budget-form .primary-button:hover {
+  background-color: var(--primary-dark);
+  transform: translateY(-2px);
+}
+
+.budget-form .secondary-button {
+  background-color: var(--secondary-color);
+  color: white;
+  padding: 0.8em 1.5em;
+  border-radius: 8px;
+  font-weight: 600;
+  transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+.budget-form .secondary-button:hover {
+  background-color: #5a6268;
+  transform: translateY(-2px);
+}
+
+.budget-form .form-hint {
+  font-size: 0.8em;
+  color: var(--secondary-color);
+  margin-top: -0.8em;
+  margin-bottom: 1em;
+}
+
+/* Budgets Overview Section Styling */
+.budgets-overview-section {
+  width: 100%;
+  padding: 2rem;
+  background-color: var(--background-light);
+  border-radius: 12px;
+  box-shadow: 0 6px 12px var(--shadow-dark);
+  animation: fadeIn 0.8s ease-out;
+}
+
+.budgets-overview-section h2 {
+  color: var(--primary-color);
+  margin-bottom: 1.5rem;
+  font-size: 2em;
+}
+
+.budgets-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 1.5rem;
+  justify-content: center;
+}
+
+.budget-card {
+  background-color: var(--card-background);
+  border-radius: 12px;
+  padding: 1.5rem;
+  box-shadow: 0 4px 8px var(--shadow-dark);
+  text-align: left;
+  border: 1px solid var(--border-color);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between; /* Push actions to bottom */
+}
+
+.budget-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 8px 16px var(--shadow-dark);
+}
+
+.budget-card.over-budget {
+  border-color: var(--danger-color);
+  box-shadow: 0 0 15px rgba(220, 53, 69, 0.5); /* Red glow for over budget */
+}
+
+.budget-card h3 {
+  color: var(--text-light);
+  font-size: 1.5em;
+  margin-bottom: 0.8rem;
+}
+
+.budget-card p {
+  margin-bottom: 0.2rem;
+  color: var(--text-light);
+  font-size: 0.95em;
+}
+
+.budget-card .budget-value {
+  font-weight: 600;
+  color: var(--primary-color); /* Default value color */
+}
+
+.budget-card .text-danger {
+  color: var(--danger-color);
+}
+
+.budget-card .text-success {
+  color: var(--success-color);
+}
+
+
+.progress-bar-container {
+  width: 100%;
+  background-color: #555;
+  border-radius: 5px;
+  height: 12px;
+  margin-top: 1rem;
+  overflow: hidden;
+  box-shadow: inset 0 1px 3px rgba(0, 0, 0, 0.2);
+}
+
+.progress-bar-fill {
+  height: 100%;
+  background-color: var(--success-color);
+  border-radius: 5px;
+  transition: width 0.5s ease-in-out, background-color 0.3s ease;
+}
+
+.progress-text {
+  display: block;
+  text-align: right;
+  font-size: 0.85em;
+  color: var(--text-light);
+  margin-top: 0.5rem;
+  font-weight: 500;
+}
+
+.budget-actions {
+  display: flex;
+  gap: 0.5rem;
+  justify-content: flex-end; /* Align buttons to the right */
+  margin-top: 1.5rem; /* Space from progress bar */
+}
+
+.budget-actions .action-button {
+  padding: 0.5em 1em;
+  font-size: 0.8em;
+  border-radius: 5px;
+  transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+.budget-actions .edit-button {
+  background-color: var(--primary-color);
+  color: white;
+}
+
+.budget-actions .edit-button:hover {
+  background-color: var(--primary-dark);
+  transform: translateY(-1px);
+}
+
+.budget-actions .delete-button {
+  background-color: var(--danger-color);
+  color: white;
+}
+
+.budget-actions .delete-button:hover {
+  background-color: #c82333;
+  transform: translateY(-1px);
+}
+
+.no-budgets {
+  text-align: center;
+  margin-top: 2rem;
+  font-style: italic;
+  color: var(--text-light);
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+  .budget-form {
+    padding: 1.5rem;
+    gap: 1rem;
+  }
+  .budget-form h3 {
+    font-size: 1.5em;
+  }
+  .budgets-overview-section {
+    padding: 1.5rem;
+  }
+  .budgets-grid {
+    grid-template-columns: 1fr; /* Stack budgets on small screens */
+    gap: 1rem;
+  }
+  .budget-card {
+    padding: 1rem;
+  }
+  .budget-card h3 {
+    font-size: 1.3em;
+  }
+  .budget-card p {
+    font-size: 0.9em;
+  }
+  .progress-text {
+    font-size: 0.8em;
+  }
+}
+
+@media (max-width: 480px) {
+  .budgets-page {
+    gap: 1rem;
+  }
+  .budget-form {
+    padding: 1rem;
+  }
+  .budget-form h3 {
+    font-size: 1.2em;
+  }
+  .budgets-overview-section {
+    padding: 1rem;
+  }
+}
